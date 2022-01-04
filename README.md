@@ -6,12 +6,12 @@
 
   * This is a sample of the research data. This is a piece of Z-stack telescope data that make by Collaborator 光山先生.
 
-    <img src="/Users/Alpaca/Desktop/Research/NDAcquisition/DataSample/segmentationsSample.png" alt="segmentationsSample" style="zoom:50%;" />
+   <img src="./DataSample/segmentationsSample.png" alt="segmentationsSample" style="zoom:50%;" />
 
   
 
   * The First STEP of the research is to split each Cell from the whole image. And the following image is some sample of results that pick by the boxes and masks which are gotten from segmentation information.
 
-  <img src="./DataSample/cell03.png" alt="cell03" style="zoom:50%;" />
+ <img src="./DataSample/cell03.png" alt="cell03" style="zoom:50%;" />
 
-<img src="./DataSample/cell02_mask.png" alt="cell02_mask" style="zoom:50%;" />
+ <img src="./DataSample/cell02_mask.png" alt="cell02_mask" style="zoom:50%;" />
