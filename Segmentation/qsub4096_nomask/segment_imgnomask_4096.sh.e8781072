@@ -1,0 +1,650 @@
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:48:32.642109: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:48:32.649616: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:48:32.767245: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1170d950 executing computations on platform CUDA. Devices:
+2021-12-25 10:48:32.767347: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:48:32.769931: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:48:32.770375: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x118df830 executing computations on platform Host. Devices:
+2021-12-25 10:48:32.770420: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:48:32.771412: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:48:32.771669: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:48:32.771799: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:48:32.771903: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:48:32.772005: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:48:32.772124: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:48:32.772223: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:48:32.772325: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:48:32.772345: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:48:32.772373: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:48:32.772388: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:48:32.772405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:48:34.038441: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:49:14.909042: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:49:14.917307: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:49:15.033662: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1108b140 executing computations on platform CUDA. Devices:
+2021-12-25 10:49:15.033768: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:49:15.036486: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:49:15.036920: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1125cfc0 executing computations on platform Host. Devices:
+2021-12-25 10:49:15.036959: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:49:15.037964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:49:15.038215: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:15.038364: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:15.038467: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:15.038567: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:15.038670: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:15.038768: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:15.038872: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:15.038892: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:49:15.038922: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:49:15.038937: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:49:15.038955: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:49:16.315875: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:49:59.125617: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:49:59.134104: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:49:59.252191: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x10426c40 executing computations on platform CUDA. Devices:
+2021-12-25 10:49:59.252282: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:49:59.254984: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:49:59.255446: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x105f8b40 executing computations on platform Host. Devices:
+2021-12-25 10:49:59.255485: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:49:59.256508: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:49:59.256740: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:59.256859: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:59.256989: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:59.257104: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:59.257212: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:59.257316: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:59.257423: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:49:59.257446: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:49:59.257476: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:49:59.257491: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:49:59.257509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:50:00.534152: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:50:53.916329: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:50:53.924411: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:50:54.041830: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x112dc730 executing computations on platform CUDA. Devices:
+2021-12-25 10:50:54.041933: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:50:54.044509: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:50:54.044909: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x114ae640 executing computations on platform Host. Devices:
+2021-12-25 10:50:54.044945: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:50:54.045930: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:50:54.046497: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:50:54.046829: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:50:54.047188: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:50:54.047478: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:50:54.047755: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:50:54.048056: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:50:54.048423: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:50:54.048449: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:50:54.048480: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:50:54.048495: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:50:54.048513: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:50:55.263760: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:52:02.130653: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:52:02.138860: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:52:02.254229: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x11f142d0 executing computations on platform CUDA. Devices:
+2021-12-25 10:52:02.254325: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:52:02.256897: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:52:02.257332: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x120e6140 executing computations on platform Host. Devices:
+2021-12-25 10:52:02.257369: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:52:02.258338: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:52:02.259242: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:02.259913: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:02.260628: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:02.261382: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:02.262022: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:02.262655: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:02.263286: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:02.263313: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:52:02.263343: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:52:02.263359: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:52:02.263376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:52:03.466260: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:52:45.504291: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:52:45.511708: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:52:45.632231: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x11bfa830 executing computations on platform CUDA. Devices:
+2021-12-25 10:52:45.632320: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:52:45.634887: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:52:45.635297: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x11dcc710 executing computations on platform Host. Devices:
+2021-12-25 10:52:45.635346: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:52:45.636341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:52:45.636624: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:45.636747: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:45.636853: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:45.636958: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:45.637095: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:45.637207: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:45.637319: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:52:45.637340: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:52:45.637368: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:52:45.637383: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:52:45.637401: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:52:46.856506: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:53:29.865735: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:53:29.873678: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:53:29.989794: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1128a900 executing computations on platform CUDA. Devices:
+2021-12-25 10:53:29.989884: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:53:29.992456: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:53:29.992892: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1145c800 executing computations on platform Host. Devices:
+2021-12-25 10:53:29.992929: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:53:29.993908: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:53:29.994380: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:53:29.994721: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:53:29.995011: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:53:29.995286: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:53:29.995546: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:53:29.995831: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:53:29.996136: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:53:29.996161: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:53:29.996192: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:53:29.996208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:53:29.996225: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:53:31.218506: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:54:13.380431: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:54:13.388559: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:54:13.511478: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x11925720 executing computations on platform CUDA. Devices:
+2021-12-25 10:54:13.511576: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:54:13.514153: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:54:13.514561: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x11af7630 executing computations on platform Host. Devices:
+2021-12-25 10:54:13.514614: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:54:13.515611: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:54:13.516166: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:54:13.516471: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:54:13.516730: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:54:13.517013: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:54:13.517294: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:54:13.517556: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:54:13.517845: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:54:13.517871: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:54:13.517902: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:54:13.517918: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:54:13.517936: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:54:14.710266: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:55:05.532914: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:55:05.542786: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:55:05.659504: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1042da50 executing computations on platform CUDA. Devices:
+2021-12-25 10:55:05.659596: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:55:05.662235: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:55:05.662659: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x105ff8f0 executing computations on platform Host. Devices:
+2021-12-25 10:55:05.662696: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:55:05.663689: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:55:05.664643: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:05.665356: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:05.666120: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:05.666801: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:05.667628: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:05.668398: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:05.669148: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:05.669175: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:55:05.669206: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:55:05.669222: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:55:05.669241: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:55:06.921098: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:55:52.160324: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:55:52.169413: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:55:52.284939: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x10fe6780 executing computations on platform CUDA. Devices:
+2021-12-25 10:55:52.285036: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:55:52.287697: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:55:52.288137: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x111b8670 executing computations on platform Host. Devices:
+2021-12-25 10:55:52.288174: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:55:52.289169: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:55:52.289906: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:52.290432: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:52.290972: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:52.291538: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:52.292073: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:52.292646: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:52.293169: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:55:52.293213: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:55:52.293245: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:55:52.293261: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:55:52.293279: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:55:53.477714: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:56:35.374337: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:56:35.383659: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:56:35.500457: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x107512e0 executing computations on platform CUDA. Devices:
+2021-12-25 10:56:35.500529: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:56:35.503239: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:56:35.503695: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x10923190 executing computations on platform Host. Devices:
+2021-12-25 10:56:35.503745: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:56:35.504736: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:56:35.506833: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:56:35.507420: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:56:35.507936: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:56:35.508503: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:56:35.509163: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:56:35.509753: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:56:35.510571: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:56:35.510597: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:56:35.510627: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:56:35.510659: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:56:35.510678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:56:36.708251: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:57:51.822460: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:57:51.831829: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:57:51.951155: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x117303a0 executing computations on platform CUDA. Devices:
+2021-12-25 10:57:51.951280: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:57:51.954020: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:57:51.954485: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x11902270 executing computations on platform Host. Devices:
+2021-12-25 10:57:51.954527: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:57:51.955559: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:57:51.956555: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:57:51.957354: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:57:51.958010: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:57:51.958804: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:57:51.959500: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:57:51.960118: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:57:51.960847: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:57:51.960877: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:57:51.960915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:57:51.960932: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:57:51.960951: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:57:53.318872: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2139: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:2239: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:341: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:399: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:423: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:720: The name tf.sets.set_intersection is deprecated. Please use tf.sets.intersection instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:722: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+WARNING:tensorflow:From /home/acd13264yb/jupyter_env/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py:772: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+2021-12-25 10:58:44.865103: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-12-25 10:58:44.874340: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2021-12-25 10:58:44.989440: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x111bc140 executing computations on platform CUDA. Devices:
+2021-12-25 10:58:44.989544: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla V100-SXM2-16GB, Compute Capability 7.0
+2021-12-25 10:58:44.992299: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2021-12-25 10:58:44.992748: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1138dff0 executing computations on platform Host. Devices:
+2021-12-25 10:58:44.992787: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-12-25 10:58:44.993805: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
+pciBusID: 0000:b1:00.0
+2021-12-25 10:58:44.994755: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:58:44.995459: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:58:44.996129: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:58:44.996818: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:58:44.997472: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:58:44.998134: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:58:44.998775: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /apps/centos7/gcc/7.4.0/lib64:/apps/cudnn/8.1.1/cuda11.0/lib64:/apps/cuda/11.0.3/lib64:/apps/cuda/11.0.3/extras/CUPTI/lib64:/apps/centos7/python/3.6.12/lib
+2021-12-25 10:58:44.998802: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2021-12-25 10:58:44.998832: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-25 10:58:44.998848: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2021-12-25 10:58:44.998866: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2021-12-25 10:58:46.250854: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
