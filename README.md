@@ -12,6 +12,7 @@
 
   * The First STEP of the research is to split each Cell from the whole image. And the following image is some sample of results that pick by the boxes and masks which are gotten from segmentation information.
 
- <img src="./DataSample/cell03.png" alt="cell03" style="zoom:50%;" />
+<div align=center>
+<img src="./DataSample/cell03.png" alt="cell03" width="180" height="105"> width="180" height="105"/> width="180" height="105"/><img src="./DataSample/cell02_mask.png" alt="cell02_mask" width="180" height="105"> width="180" height="105"/>
+</div>
 
- <img src="./DataSample/cell02_mask.png" alt="cell02_mask" style="zoom:50%;" />
