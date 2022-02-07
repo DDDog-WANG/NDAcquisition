@@ -238,7 +238,7 @@ for epoch in range(n_epochs):
     print('EPOCH: {}, Train [Loss: {:.3f}, Accuracy: {:.3f}], Valid [Loss: {:.3f}, Accuracy:{:.3f}]'.format(epoch,np.mean(losses_train),acc_train/n_train,np.mean(losses_valid),acc_val/n_val), flush=True)
 
 
-# train processing plot
+# train processing plot, y axis is from 0 to 1.0
 epochs=range(1,n_epochs+1)
 plt.ylim(0,1.0)
 plt.plot(epochs,Accuracytrain,'b',label='Training accuracy')  
@@ -246,8 +246,24 @@ plt.plot(epochs, Accuracyvalid,'r',label='Validation accuracy')
 plt.title('Training and Validation accuracy')
 name=sys.argv[1]+sys.argv[2]+sys.argv[3]+"_Output.jpg"
 plt.savefig(name)
-print("Saved output as , ", name)
+print("Saved output as , ", name, flush=True)
 print("")
+
+
+# train processing plot, y axis is from 0.6 to 1.0
+plt.ylim(0.6,1.0)
+plt.plot(epochs,Accuracytrain,'b',label='Training accuracy')  
+plt.plot(epochs, Accuracyvalid,'r',label='Validation accuracy')
+plt.title('Training and Validation accuracy')
+name_specify=sys.argv[1]+sys.argv[2]+sys.argv[3]+"_Output_specify.jpg"
+plt.savefig(name_specify)
+print("Saved output as , ", name_specify, flush=True)
+print("")
+
+# save model
+PATH = "Model_"+sys.argv[1]+sys.argv[2]+sys.argv[3]+".pkl"
+torch.save(model, PATH)
+
 
 print("TEST : ")
 losses_test = []
