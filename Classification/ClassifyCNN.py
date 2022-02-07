@@ -179,7 +179,7 @@ if torch.cuda.device_count() > 1:
 model.to(device)#第二行代码
 
 print("Start Training", flush=True)
-n_epochs = 500
+n_epochs = 200
 # weight_for_0 : 1. / negative * (negative + positive) negative : ラベル0の数
 # weight_for_1 : 1. / positive * (negative + positive) positive : ラベル1の数
 # class_weight = {0 : weight_for_0, 1 : weight_for_1}
@@ -240,6 +240,7 @@ for epoch in range(n_epochs):
 
 # train processing plot
 epochs=range(1,n_epochs+1)
+plt.ylim(0,1.0)
 plt.plot(epochs,Accuracytrain,'b',label='Training accuracy')  
 plt.plot(epochs, Accuracyvalid,'r',label='Validation accuracy')
 plt.title('Training and Validation accuracy')
