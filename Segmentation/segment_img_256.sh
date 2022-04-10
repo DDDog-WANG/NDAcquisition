@@ -67,15 +67,15 @@ source ~/jupyter_env/bin/activate
 # then define variables like this
 # $data変数はjobを投げる時に設定する、今回はforで実行したいデータセットを繰り返すあげる
 PYDIR=$HOME/DDDog/NDAcquisition/Segmentation
-SAVEDIR=$HOME/DDDog/Datasets/NDAcquisition/Cells/$filename
+SAVEDIR=$HOME/DDDog/Datasets/211202NDAcquisition/CellSplit/$filename
 
 ithr=`expr $ithr - 1`
 cd $PYDIR
 for i in {001..256}; do
-  DATADIR=$HOME/DDDog/Datasets/NDAcquisition/$filename/${filename}_XY${i}.ome.tif
+  DATADIR=$HOME/DDDog/Datasets/211202NDAcquisition/$filename/${filename}_XY${i}.ome.tif
   IMGNAME=${filename}_XY${i}.ome.tif  
   if [ `expr $i % $nthr` = $ithr ] ; then
-      python $PYDIR/MaskRCNN_img_withmask.py $DATADIR $IMGNAME $SAVEDIR
+      python $PYDIR/MaskRCNN_Split.py $DATADIR $IMGNAME $SAVEDIR
   fi
 done
 
