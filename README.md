@@ -12,11 +12,11 @@
   * Two different label that the cell is sick or healthy(use medicine to cure the sick part)
 
 
-![0120](./DataSample/0120.png) ![0140](/Users/Alpaca/Desktop/Research/NDAcquisition/DataSample/0140.png)
+![0120](./DataSample/0120.png) ![0140](./DataSample/0140.png)
 
-![0220](/Users/Alpaca/Desktop/Research/NDAcquisition/DataSample/0220.png)
+![0220](./DataSample/0220.png)
 
-![0240](/Users/Alpaca/Desktop/Research/NDAcquisition/DataSample/0240.png)
+![0240](./DataSample/0240.png)
 
 
 
