@@ -1,20 +1,47 @@
 # NDAcquisition
 
-* This is one of my research now in Saito Lab. It can be divided by almost 2 steps. One is to split each cell and save as one cell image, the other is to classify with two classes that the cell is healthy or ill.
+* This is one of my research now in Saito Lab. The outline of this research is like figure below. The data is multiple cells, so first step is to split each cell and save as one cell image, next step is to classify with two classes that the cell is healthy or ill. Finally visualize extracted features that is express some important biology meaning, and explan them by biology knowedge like chromosome heterochromatin. 
 
-* The data is not provided in public, the data sample is like as following.
+  ![修士研究](./DataSample/修士研究.png)
 
-  * This is a sample of the research data. This is a piece of Z-stack telescope data that make by Collaborator 光山先生.
+## Data
 
-   <img src="./DataSample/segmentationsSample.png" alt="segmentationsSample" style="zoom:50%;" />
+* The data is not provided in public, the data sample is as following.
 
-  
+  * This is a piece of Z-stack telescope data that is made by Collaborator 光山先生. 
+  * Two different label that the cell is sick or healthy(use medicine to cure the sick part)
 
-  * The First STEP of the research is to split each Cell from the whole image. And the following image is some sample of results that pick by the boxes and masks which are gotten from segmentation information.
 
-<div align=center>
-<img src="./DataSample/cell03.png" alt="cell03" width="256" height="256"/>
- 
-<img src="./DataSample/cell02_mask.png" alt="cell02_mask" width="256" height="256"/>
-</div>
+![0120](./DataSample/0120.png) ![0140](/Users/Alpaca/Desktop/Research/NDAcquisition/DataSample/0140.png)
+
+![0220](/Users/Alpaca/Desktop/Research/NDAcquisition/DataSample/0220.png)
+
+![0240](/Users/Alpaca/Desktop/Research/NDAcquisition/DataSample/0240.png)
+
+
+
+## Instance Segmentation
+
+* using maskrcnn
+
+![segmentationsSample](./DataSample/segmentationsSample.png)
+
+* Then get the new one cell datasets.
+
+![onecell0140](./DataSample/onecell0140.png)
+
+![onecell0240](./DataSample/onecell0240.png)
+
+## Classification
+
+* Using resnet18
+* Using transformer
+
+## Visualization and Explanation
+
+* using the GradCAM and GuidedBackprop
+
+  ![camgb01](./DataSample/camgb01.png)
+
+  ![camgb02](./DataSample/camgb02.png)
 
