@@ -50,12 +50,12 @@ module purge
 
 # ここから各自修正する
 # Then, load necessary modules（自分がロードしたいモジュールロードする）
-module load python/3.6/3.6.12 cuda/11.0/11.0.3 cudnn/8.1/8.1.1 gcc/7.4.0
+module load gcc/11.2.0 python/3.10/3.10.4 cuda/11.0/11.0.3 cudnn/8.1/8.1.1
 
 # If you create a python virtual environment using python provided by a modules,
 # the environment should be activated after loading the corresponding python module.
 # 自分の環境を配置する
-source ~/jupyter_env/bin/activate
+source ~/python10_env/bin/activate
 
 # In ABCI, the space of home directory is limited to ~100GB.
 # Large files should be saved in group directory.
@@ -66,7 +66,7 @@ source ~/jupyter_env/bin/activate
 # (e.g. ln -s /groups/gaa50089/[yourname] $HOME/work)
 # then define variables like this
 # $data変数はjobを投げる時に設定する、今回はforで実行したいデータセットを繰り返すあげる
-PYDIR=$HOME/DDDog/NDAcquisition/Classification
+PYDIR=$HOME/DDDog/NDAcquisition/Segmentation/qsub_pytorch/
 
-python $PYDIR/FeatureActivation.py
+python $PYDIR/unet.py
 
