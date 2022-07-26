@@ -12,6 +12,7 @@ import sys
 import random
 import itertools
 import colorsys
+from tqdm import tqdm
 
 import numpy as np
 from skimage.measure import find_contours
@@ -25,7 +26,7 @@ ROOT_DIR = os.path.abspath("../")
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
-from mrcnn import utils
+from . import utils
 
 
 ############################################################
@@ -80,9 +81,96 @@ def apply_mask(image, mask, color, alpha=0.5):
     return image
 
 
+def display_instances_masks(images, results, side):
+    plt.figure(figsize=(side,side))
+    for num in tqdm(range(25)):
+        r = results[num]
+        image = images[num]
+        boxes,masks,class_ids,scores,class_names = r['rois'],r['masks'],r['class_ids'],r['scores'],["BG","nucleus"]
+    
+        # Number of instances
+        N = boxes.shape[0]
+        if N:
+            assert boxes.shape[0] == masks.shape[-1] == class_ids.shape[0]
+
+        # Generate random colors
+        colors = random_colors(N) 
+        masked_image = image.astype(np.uint32).copy()
+        
+        for i in range(N):
+            color = colors[i]
+            mask = masks[:, :, i]
+            masked_image = apply_mask(masked_image, mask, color)
+                
+        plt.axis('off')
+        plt.subplot(5,5,num+1)
+        plt.subplots_adjust(wspace=0.0, hspace=0.0)
+        plt.imshow(masked_image.astype(np.uint8))
+    plt.show()
+    
+def display_instances_grid(images, results, side, show_mask=True, show_bbox=True, colors=None, captions=None):
+    fig,ax = plt.subplots(5,5,figsize=(side,side))
+    for num in tqdm(range(25)):
+        r = results[num]
+        image = images[num]
+        boxes,masks,class_ids,scores,class_names = r['rois'],r['masks'],r['class_ids'],r['scores'],["BG","nucleus"]
+#         elif use=="pytorch":
+#             boxes,masks,class_ids,scores,class_names = r['boxes'],r['masks'],r['labels'],r['scores'],["BG","nucleus"]
+    
+        # Number of instances
+        N = boxes.shape[0]
+        if N:
+            assert boxes.shape[0] == masks.shape[-1] == class_ids.shape[0]
+
+        # Generate random colors
+        colors = random_colors(N) 
+
+        masked_image = image.astype(np.uint32).copy()
+        for i in range(N):
+            color = colors[i]
+            # Bounding box
+            if not np.any(boxes[i]):
+                # Skip this instance. Has no bbox. Likely lost in image cropping.
+                continue
+            y1, x1, y2, x2 = boxes[i]
+            if show_bbox:
+                p = patches.Rectangle((x1, y1), x2 - x1, y2 - y1, linewidth=2,alpha=0.7, linestyle="dashed",edgecolor=color, facecolor='none')
+                ax[num//5,num%5].add_patch(p)
+
+            # Label
+            if not captions:
+                class_id = class_ids[i]
+                score = scores[i] if scores is not None else None
+                label = class_names[class_id]
+                caption = str(score) if score else label
+            else:
+                caption = captions[i]
+            ax[num//5,num%5].text(x1, y1 + 8, caption,color='w', size=11, backgroundcolor="none")
+
+            # Mask
+            mask = masks[:, :, i]
+            if show_mask:
+                masked_image = apply_mask(masked_image, mask, color)
+
+            # Mask Polygon
+            # Pad to ensure proper polygons for masks that touch image edges.
+            padded_mask = np.zeros((mask.shape[0] + 2, mask.shape[1] + 2), dtype=np.uint8)
+            padded_mask[1:-1, 1:-1] = mask
+            contours = find_contours(padded_mask, 0.5)
+            for verts in contours:
+                # Subtract the padding and flip (y, x) to (x, y)
+                verts = np.fliplr(verts) - 1
+                p = Polygon(verts, facecolor="none", edgecolor=color)
+                ax[num//5,num%5].add_patch(p)
+        ax[num//5,num%5].axis('off')
+        ax[num//5,num%5].imshow(masked_image.astype(np.uint8))
+    fig.tight_layout()
+    plt.subplots_adjust(wspace=0.0, hspace=0.0)
+    plt.show()
+    
 def display_instances(image, boxes, masks, class_ids, class_names,
                       scores=None, title="",
-                      figsize=(16, 16), ax=None,
+                      figsize=(10, 10), ax=None,
                       show_mask=True, show_bbox=True,
                       colors=None, captions=None):
     """
@@ -97,6 +185,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
     colors: (optional) An array or colors to use with each object
     captions: (optional) A list of strings to use as captions for each object
     """
+
     # Number of instances
     N = boxes.shape[0]
     if not N:
