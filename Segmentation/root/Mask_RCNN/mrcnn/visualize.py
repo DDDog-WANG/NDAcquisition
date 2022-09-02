@@ -168,7 +168,7 @@ def display_instances_grid(images, results, side, use_masks=None, show_mask=True
         ax[num//5,num%5].axis('off')
         ax[num//5,num%5].imshow(masked_image.astype(np.uint8))
     fig.tight_layout()
-    plt.subplots_adjust(wspace=0.0, hspace=0.0)
+    plt.subplots_adjust(wspace=0.02, hspace=0.02)
     plt.show()
     
 def display_instances(image, boxes, masks, class_ids, class_names,
