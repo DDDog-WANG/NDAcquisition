@@ -5,6 +5,7 @@ import sys
 from torchvision import transforms
 import numpy as np
 import cv2
+from matplotlib import pyplot as plt
 
 def rollout(attentions, discard_ratio, head_fusion):
     result = torch.eye(attentions[0].size(-1))
@@ -19,27 +20,25 @@ def rollout(attentions, discard_ratio, head_fusion):
             else:
                 raise "Attention head fusion type Not supported"
 
-            # Drop the lowest attentions, but
-            # don't drop the class token
+            # Drop the lowest attentions, but don't drop the class token
             flat = attention_heads_fused.view(attention_heads_fused.size(0), -1)
             _, indices = flat.topk(int(flat.size(-1)*discard_ratio), -1, False)
+
             indices = indices[indices != 0]
             flat[0, indices] = 0
-
             I = torch.eye(attention_heads_fused.size(-1))
             a = (attention_heads_fused + 1.0*I)/2
             a = a / a.sum(dim=-1)
-
             result = torch.matmul(a, result)
+
+    # Look at the total attention between the class token, and the image patches
+    mask = result[0, 0, 1:]
     
-    # Look at the total attention between the class token,
-    # and the image patches
-    mask = result[0, 0 , 1 :]
     # In case of 224x224 image, this brings us from 196 to 14
     width = int(mask.size(-1)**0.5)
     mask = mask.reshape(width, width).numpy()
     mask = mask / np.max(mask)
-    return mask    
+    return attention_heads_fused,mask    
 
 class VITAttentionRollout:
     def __init__(self, model, attention_layer_name='attn_drop', head_fusion="mean",
